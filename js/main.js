@@ -374,28 +374,46 @@ document.documentElement.classList.add('js');
   const viewerImage = viewer.querySelector('[data-viewer-image]');
   const viewerCaption = viewer.querySelector('[data-viewer-caption]');
   const closeButton = viewer.querySelector('[data-viewer-close]');
+  const boundPreviews = new WeakSet();
+  let returnPreview = null;
   const openViewer = preview => {
+    returnPreview = preview;
     viewerImage.src = preview.currentSrc || preview.src;
     viewerImage.alt = preview.alt || 'Project preview';
     viewerCaption.textContent = preview.alt || '';
     viewer.showModal();
+    requestAnimationFrame(() => closeButton.focus());
   };
-  document.querySelectorAll('.projects .project-screen img').forEach(preview => {
+  const bindPreview = preview => {
+    if (boundPreviews.has(preview)) return;
+    boundPreviews.add(preview);
     preview.closest('.project-screen')?.classList.add('has-zoom');
     preview.tabIndex = 0;
     preview.setAttribute('role', 'button');
     preview.setAttribute('aria-label', `Enlarge ${preview.alt || 'project preview'}`);
-    preview.addEventListener('click', () => openViewer(preview));
+    preview.addEventListener('click', event => {
+      event.stopPropagation();
+      openViewer(preview);
+    });
     preview.addEventListener('keydown', event => {
       if (event.key === 'Enter' || event.key === ' ') {
         event.preventDefault();
+        event.stopPropagation();
         openViewer(preview);
       }
     });
-  });
+  };
+  window.bindProjectPreviews = root => {
+    root.querySelectorAll('.project-screen img, img').forEach(bindPreview);
+  };
+  window.bindProjectPreviews(document.querySelector('.projects'));
   closeButton.addEventListener('click', () => viewer.close());
   viewer.addEventListener('click', event => {
     if (event.target === viewer) viewer.close();
+  });
+  viewer.addEventListener('close', () => {
+    returnPreview?.focus();
+    returnPreview = null;
   });
 })();
 
@@ -446,6 +464,7 @@ document.documentElement.classList.add('js');
 
     content.append(screen, copy);
     activateReelControls(screen);
+    window.bindProjectPreviews?.(screen);
     modal.showModal();
     requestAnimationFrame(() => closeButton.focus());
   };
