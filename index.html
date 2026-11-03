@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Evan Foo — turning operational problems into practical business systems with AI-assisted implementation.">
+  <meta name="theme-color" content="#ffffff">
+  <title>Evan Foo — AI Implementation &amp; Business Systems</title>
+  <link rel="icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <canvas id="space" aria-hidden="true"></canvas>
+  <div class="cursor-light" aria-hidden="true"></div>
+  <div class="scroll-meter" aria-hidden="true"><span></span></div>
+
+  <header class="topbar">
+    <a class="identity" href="#home"><img src="assets/logo/evan-logo.png" alt=""><span>EVAN FOO</span></a>
+    <nav aria-label="Main navigation"><a href="#tyos">TyOS</a><a href="#projects">Projects</a><a href="#profile">Profile</a><a href="#experience">Experience</a></nav>
+    <a class="resume-link" href="assets/resume/resume.pdf" target="_blank">OPEN RÉSUMÉ <span>↗</span></a>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-video-shade" aria-hidden="true"></div>
+      <div class="hero-copy" data-depth="18">
+        <p class="system-label"><i></i> AI IMPLEMENTATION · BUSINESS SYSTEMS · WORKFLOW AUTOMATION</p>
+        <h1><span class="hero-line">Work Smarter With</span><br><span>AI &amp; Automation.</span></h1>
+        <p>I combine business understanding with AI-assisted development to build practical tools, streamline workflows, and solve real operational challenges.</p>
+        <div class="hero-actions"><a href="#tyos">View flagship project <b>↓</b></a><a href="assets/resume/resume.pdf" target="_blank">View résumé</a></div>
+      </div>
+
+      <div class="portfolio-modules hero-visual-depth" aria-label="Portfolio categories">
+        <canvas class="category-particle-ball" id="categoryParticleBall" aria-hidden="true"></canvas>
+        <a href="#web-project"><small>01</small><strong>WEB</strong><span>Websites &amp; Shopify</span></a>
+        <a href="#reels-project"><small>02</small><strong>REELS</strong><span>Short-form content</span></a>
+        <a href="#tyos"><small>03</small><strong>SYSTEMS</strong><span>Operations &amp; internal tools</span></a>
+        <a href="#growth-project"><small>04</small><strong>GROWTH</strong><span>Marketing support</span></a>
+        <a href="#marketing-project"><small>05</small><strong>MARKETING</strong><span>Campaigns &amp; assets</span></a>
+      </div>
+
+      <div class="hero-coordinates" aria-hidden="true"><span>01°17′N</span><span>103°51′E</span></div>
+      <div class="hero-index" aria-hidden="true"><span>EVAN / PORTFOLIO</span><b>00</b></div>
+    </section>
+
+    <section class="signal-band" aria-label="Core strengths">
+      <div><small>01</small><strong>UNDERSTAND THE FRICTION</strong><span>Requirements, users &amp; business context</span></div>
+      <div><small>02</small><strong>BUILD A USEFUL VERSION</strong><span>Vibe coding, content &amp; interface design</span></div>
+      <div><small>03</small><strong>VALIDATE IN CONTEXT</strong><span>Test, refine &amp; improve the workflow</span></div>
+    </section>
+
+    <section class="tyos-showcase" id="tyos">
+      <div class="tyos-wrap">
+        <div class="tyos-demo-intro reveal">
+          <p class="tyos-kicker"><i></i> WORKING INTERNAL SYSTEM</p>
+          <h2>One System for<br>Daily Operations</h2>
+          <p>I developed TyOS to make it easier for our team to manage purchase orders, check incoming shipments, and search for product details.</p>
+        </div>
+        <div class="tyos-real-demo reveal" id="tyos-walkthrough">
+          <div class="tyos-window-bar" aria-hidden="true">
+            <span class="tyos-window-dot tyos-window-dot-red"></span>
+            <span class="tyos-window-dot tyos-window-dot-yellow"></span>
+            <span class="tyos-window-dot tyos-window-dot-green"></span>
+          </div>
+          <iframe src="assets/tyos-demo/index.html" title="Interactive TyOS workflow demonstration using anonymised sample data" loading="lazy"></iframe>
+        </div>
+
+        <header class="tyos-intro tyos-intro-summary reveal">
+          <div class="tyos-summary">
+            <p><b>BUSINESS CHALLENGE</b> Purchase orders, shipment updates and product information were difficult to review consistently across separate files and conversations.</p>
+            <p><b>MY ROLE</b> Gather workflow requirements, organise information and permissions, implement with AI-assisted coding, test with sample and operational scenarios, then iterate and deploy.</p>
+            <p><b>IMPLEMENTATION</b> A central D1-backed system with role-based access, validations, record history, search and R2-hosted product documents.</p>
+            <p><b>WORKING SOLUTION</b> Purchase order management, incoming-stock visibility and a searchable product library are implemented. Detailed partial-shipment quantity allocation is clearly marked as planned.</p>
+            <p><b>BUSINESS VALUE</b> A shared operational starting point that makes records easier to find, review and follow up.</p>
+          </div>
+        </header>
+
+        <div class="tyos-demo-shell reveal" id="tyosLegacyDemo" aria-hidden="true">
+          <div class="tyos-demo-top">
+            <div class="tyos-demo-dots" aria-hidden="true"><i></i><i></i><i></i></div>
+            <div class="tyos-demo-url">tyos · internal operations workspace</div>
+            <div class="tyos-sample-banner">Sample data · No production records</div>
+            <div class="tyos-demo-controls">
+              <button id="playBtn" type="button">▶ Play walkthrough</button>
+              <button id="pauseBtn" type="button" aria-pressed="false">Ⅱ Pause</button>
+              <button id="replayBtn" type="button" aria-label="Replay walkthrough">↻</button>
+            </div>
+          </div>
+          <div class="tyos-demo-content">
+            <aside class="tyos-demo-side" aria-label="TyOS sample navigation">
+              <div class="tyos-demo-logo"><span>TY</span><b>OS+</b></div>
+              <button class="tyos-demo-nav active" data-nav="products" type="button"><span>▣</span><b>Clearance Stock</b></button>
+              <button class="tyos-demo-nav" data-nav="guide" type="button"><span>▤</span><b>Focus Product</b></button>
+              <button class="tyos-demo-nav" data-nav="incoming" type="button"><span>▧</span><b>Incoming Stock</b></button>
+              <div class="tyos-demo-note"><strong>TyOS demo</strong>Illustrative sample workspace</div>
+            </aside>
+            <div class="tyos-demo-main">
+              <div class="tyos-demo-heading">
+                <div><h3 id="screenTitle">Clearance Stock &amp; Pricing</h3><p id="screenSubtitle">Find product information without searching through separate files.</p></div>
+                <span>SAMPLE WORKSPACE</span>
+              </div>
+
+              <div class="tyos-demo-screen active" data-screen="products">
+                <div class="tyos-demo-search" id="searchTarget"><span>⌕</span><b id="searchText">Search SKU or product…</b></div>
+                <div class="tyos-demo-categories"><span>Priority</span><span>All Product</span><span class="active">S/S Refrigerator</span><span>Chest Freezer</span><span>Glass Door</span><span>Ice Makers</span></div>
+                <div class="tyos-product-table">
+                  <div class="tyos-product-head"><span>Product / SKU</span><span>Equipment</span><span>Clearance</span><span>Wholesale</span><span>Available</span></div>
+                  <button class="tyos-product-row" id="productTarget" type="button"><span><strong>TY-FZ-4D-01</strong><small>Sample model</small></span><span>4 Door Upright Freezer</span><span class="clearance">S$1,680</span><span>S$2,000</span><span class="quantity">×1</span></button>
+                  <button class="tyos-product-row" type="button"><span><strong>TY-CH-2D-02</strong><small>Sample model</small></span><span>2 Door Upright Chiller</span><span class="clearance">S$2,020</span><span>S$2,340</span><span class="quantity">×3</span></button>
+                </div>
+                <div class="tyos-spec-card" id="specCard" aria-live="polite">
+                  <div class="tyos-spec-title"><strong>4 Door Upright Freezer</strong><span>TY-FZ-4D-01 · Sample</span></div>
+                  <div class="tyos-spec-grid"><div><label>Dimension</label><b>745 × 650 × 1,985 mm</b></div><div><label>Capacity</label><b>588 L</b></div><div><label>Temperature</label><b>−25°C to −15°C</b></div><div><label>Power</label><b>230V · 1 phase</b></div><div><label>Refrigerant</label><b>Sample spec</b></div><div><label>Energy rating</label><b>3</b></div><div><label>Availability</label><b>Sample quantity</b></div><div><label>Next step</label><b>Copy product specs</b></div></div>
+                </div>
+              </div>
+
+              <div class="tyos-demo-screen" data-screen="guide">
+                <div class="tyos-guide-grid">
+                  <div class="tyos-guide-categories"><h4>Product Categories</h4><button class="active" id="guideTarget" type="button">Stainless Steel <span>4 ›</span></button><button type="button">Chest Freezer <span>2 ›</span></button><button type="button">Display Showcase <span>5 ›</span></button><button type="button">Dishwasher <span>1 ›</span></button></div>
+                  <div class="tyos-guide-card"><small>PRODUCT CATEGORY</small><h4>Stainless Steel</h4><p>Explore suitable equipment configurations for the project.</p><div><section><b>Our focus</b><ul><li>Match configuration to the space</li><li>Confirm stored products</li></ul></section><section><b>Questions &amp; notes</b><ul><li>Chiller, freezer or combination?</li><li>How many doors are required?</li><li>Confirm current lead time</li></ul></section></div></div>
+                </div>
+              </div>
+
+              <div class="tyos-demo-screen" data-screen="incoming">
+                <div class="tyos-arrival-list">
+                  <button class="tyos-arrival-card selected" id="arrivalTarget" type="button"><span><strong>SAMPLE-PR-014</strong><i>In Transit</i></span><p>2 product lines · 10 units · estimated progress</p><em><b id="progressFill"></b></em><small><span>ETA · 14 Nov</span><span>View details ↗</span></small></button>
+                  <button class="tyos-arrival-card" type="button"><span><strong>SAMPLE-PR-015</strong><i class="ordered">Ordered</i></span><p>Schedule awaiting supplier confirmation</p><em><b></b></em><small><span>ETA · To be confirmed</span><span>1 product line</span></small></button>
+                </div>
+                <div class="tyos-arrival-detail" id="arrivalDetail"><strong>SAMPLE-PR-014 · Shipment details</strong><div class="head"><span>SKU / Item</span><span>Qty</span><span>ETD / ETA</span><span>Assigned to</span></div><div><span>TY-CH-2D-02 · Upright chiller</span><span>4 units</span><span>24 Oct / 14 Nov</span><span>Sample team</span></div><div><span>TY-UC-2D-03 · Undercounter chiller</span><span>6 units</span><span>24 Oct / 14 Nov</span><span>Sample team</span></div></div>
+              </div>
+            </div>
+            <div class="tyos-demo-cursor" id="demoCursor" aria-hidden="true"><svg viewBox="0 0 24 30" fill="none"><path d="M3 2.4c0-1 1.1-1.5 1.9-.8L21.2 16c.9.8.5 2.3-.7 2.5l-6.2 1.1 3.7 6.2-3.3 2-3.8-6.3-3.5 5.1c-.7 1-2.2.6-2.4-.6L3 2.4Z" fill="#fff" stroke="#173d42" stroke-width="1.5"/></svg></div>
+            <div class="tyos-cursor-ring" id="cursorRing" aria-hidden="true"></div>
+          </div>
+          <div class="tyos-demo-footer"><div><i id="statusDot"></i><span id="demoStatus">Choose a workflow or play the walkthrough.</span></div><b id="demoResult">One workspace · three useful workflows</b></div>
+        </div>
+        <div class="tyos-steps" aria-label="Walkthrough progress"><span class="active"></span><span></span><span></span></div>
+        <div class="tyos-demo-caption"><strong id="requestCaption">Request: “Can you find the product specs and price?”</strong><span>Illustrative demo · Sample data only</span></div>
+      </div>
+    </section>
+
+    <section class="projects" id="projects">
+      <header class="section-head reveal"><div><p class="system-label"><i></i> SELECTED PROJECT SYSTEMS</p><h2>More problems.<br><span>Practical outcomes.</span></h2></div><p>Six additional examples showing how I move from a real requirement to a clear, usable output.</p></header>
+
+      <div class="project-grid">
+      <article class="project project-card project-feature reveal" id="growth-project" data-category="PRODUCT CONCEPT · SALES ENABLEMENT" tabindex="0" role="button" aria-haspopup="dialog">
+        <div class="project-screen layered-screen scoutly-screen">
+          <figure class="screen-back"><img src="assets/images/scoutly-cafe-leads.webp" alt="Scoutly cafe lead database interface" loading="lazy" decoding="async"></figure>
+          <figure class="screen-front"><img src="assets/images/scoutly-dashboard-overview.webp" alt="Scoutly F&B intelligence dashboard" loading="lazy" decoding="async"></figure>
+          <span class="screen-tag">INTERACTIVE PROTOTYPE / WIP</span>
+        </div>
+        <div class="project-copy"><span class="project-no">PROJECT / 01</span><h3>Singapore F&amp;B<br>Sales Intelligence</h3><div class="case-summary"><p><b>PROBLEM</b>Sales staff spent too much time searching across different sources for potential F&amp;B clients.</p><p><b>SOLUTION</b>A filterable dashboard that brings new and upcoming businesses into one place.</p><p><b>OUTCOME</b>Prospects are easier to review, giving the team a clearer starting point for outreach.</p></div><dl><div><dt>ROLE</dt><dd>Team research, problem framing, information architecture, MVP scope</dd></div><div><dt>FINAL OUTPUT</dt><dd>A centralised lead-review dashboard that reduces scattered research.</dd></div></dl><div class="tags"><span>Vibe Coding</span><span>Product Concept</span><span>Sales Enablement</span></div></div>
+      </article>
+
+      <article class="project project-card reveal" data-category="INTERNAL TOOL · PIM" tabindex="0" role="button" aria-haspopup="dialog">
+        <div class="project-screen pim-screen"><figure class="full-screen"><img src="assets/images/wm-pim-cloud-full-interface.webp" alt="WM Smart Living PIM Cloud interface" loading="lazy" decoding="async"></figure></div>
+        <div class="project-copy"><span class="card-category">INTERNAL TOOL · PIM</span><span class="project-no">PROJECT / 02</span><h3>Visual Inventory &amp;<br>Bundle Planning</h3><div class="case-summary"><p><b>PROBLEM</b>The client found spreadsheet-based stock and bundle planning difficult to scan.</p><p><b>SOLUTION</b>A visual PIM interface combining inventory, bundle pricing, estimated profit, and margin.</p><p><b>OUTCOME</b>Stock and bundle estimates can be reviewed more clearly at a glance.</p></div><p class="disclaimer">Profit and margin figures are planning estimates—not final accounting results.</p><dl><div><dt>ROLE</dt><dd>Requirement discovery, inventory view, bundle workflow, interface design</dd></div><div><dt>FINAL OUTPUT</dt><dd>A visual inventory and bundle-planning tool with adjustable pricing and margin estimates.</dd></div></dl><div class="tags"><span>Internal Tool</span><span>PIM</span><span>Vibe Coding</span></div></div>
+      </article>
+
+      <article class="project project-card reveal" data-category="LANDING PAGE · SEO · GA4" tabindex="0" role="button" aria-haspopup="dialog">
+        <div class="project-screen landing-screen"><figure><img src="assets/images/landing-page-preview.webp" alt="Car fumigation service landing page" loading="lazy" decoding="async"></figure><div class="proof-stack"><img src="assets/images/client-feedback-seven-appointments.webp" alt="Client feedback reporting seven appointments" loading="lazy" decoding="async"><img src="assets/images/client-feedback-fully-booked.webp" alt="Client feedback reporting fully booked days" loading="lazy" decoding="async"></div></div>
+        <div class="project-copy"><span class="project-no">PROJECT / 03</span><h3>Landing Page<br>to Enquiries</h3><div class="case-summary"><p><b>PROBLEM</b>The client needed a clearer way to present the service and turn visitors into enquiries.</p><p><b>SOLUTION</b>A focused landing page with WhatsApp contact, foundational SEO, and GA4 tracking.</p><p><b>OUTCOME</b>A simpler, trackable enquiry journey; the client later reported more appointment enquiries.</p></div><dl><div><dt>ROLE</dt><dd>Requirement discovery, positioning, page build, SEO and GA4 setup</dd></div><div><dt>FINAL OUTPUT</dt><dd>A booking-focused service funnel with a clear enquiry path and basic performance tracking.</dd></div></dl><div class="tags"><span>Landing Page</span><span>SEO</span><span>GA4</span></div></div>
+      </article>
+
+      <article class="project project-card reveal" id="web-project" data-category="SHOPIFY LIQUID · WEB DESIGN" tabindex="0" role="button" aria-haspopup="dialog">
+        <div class="project-screen dual-screen"><figure><img src="assets/images/shopify-storefront-preview.webp" alt="Commercial Fridge Deals Shopify storefront" loading="lazy" decoding="async"></figure><figure><img src="assets/images/shopify-liquid-code.webp" alt="Shopify Liquid editing interface" loading="lazy" decoding="async"></figure></div>
+        <div class="project-copy"><span class="project-no">PROJECT / 04</span><h3>Shopify Optimisation<br>with Vibe Coding</h3><div class="case-summary"><p><b>PROBLEM</b>The standard Shopify theme did not present the product range clearly enough for the business.</p><p><b>SOLUTION</b>AI-assisted Liquid edits to restructure content, improve navigation, and add feature labels.</p><p><b>OUTCOME</b>A clearer, more business-specific storefront built within the existing Shopify framework.</p></div><dl><div><dt>ROLE</dt><dd>Layout planning, Liquid edits, navigation styling, troubleshooting</dd></div><div><dt>FINAL OUTPUT</dt><dd>A customised Shopify storefront that makes products easier to discover and compare.</dd></div></dl><div class="tags"><span>Shopify Liquid</span><span>Vibe Coding</span><span>Web Design</span></div></div>
+      </article>
+
+      <article class="project project-card reveal" id="reels-project" data-category="AIGC · SHORT-FORM EDITING" tabindex="0" role="button" aria-haspopup="dialog">
+        <div class="project-screen reel-system" data-reels>
+          <div class="reel-player"><iframe src="https://www.youtube-nocookie.com/embed/9K4l81sEGqQ?rel=0" title="AI Host-Led Promotional Reel" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+          <div class="reel-control"><button data-reel="9K4l81sEGqQ" aria-current="true">01 <span>AI HOST</span></button><button data-reel="tJdjFQpZRhw">02 <span>TREND</span></button><button data-reel="CH_SuSlxSW0">03 <span>EVENT</span></button><button data-reel="H6Ylp-J4e-0">04 <span>INVITE</span></button></div>
+        </div>
+        <div class="project-copy"><span class="project-no">PROJECT / 05</span><h3>AI-Assisted<br>Social Reels</h3><div class="case-summary"><p><b>PROBLEM</b>Social campaigns needed varied short-form content without relying on one production style.</p><p><b>SOLUTION</b>Four reel formats combining hands-on editing with AI-generated material where relevant.</p><p><b>OUTCOME</b>A flexible set of videos for host-led, trend, event, and invitation content.</p></div><dl><div><dt>ROLE</dt><dd>AIGC workflow, editing, captions, pacing, and quality control</dd></div><div><dt>FINAL OUTPUT</dt><dd>Four social-ready short-form video formats produced in CapCut / Jianying.</dd></div></dl><div class="tags"><span>AIGC</span><span>Short-Form</span><span>Editing</span></div></div>
+      </article>
+
+      <article class="project project-card reveal" id="marketing-project" data-category="GENERATIVE AI · CANVA" tabindex="0" role="button" aria-haspopup="dialog">
+        <div class="project-screen poster-screen"><figure><img src="assets/images/sigep-poster-vertical.gif" alt="Animated SIGEP promotional poster" loading="lazy" decoding="async"></figure><div><small>PROCESS</small><span>AI CONCEPT</span><i>→</i><span>CANVA REFINEMENT</span><i>→</i><span>EDITABLE ARTWORK</span></div></div>
+        <div class="project-copy"><span class="project-no">PROJECT / 06</span><h3>AI Concept to<br>Canva Artwork</h3><div class="case-summary"><p><b>PROBLEM</b>Early AI-generated concepts were not yet editable or ready for campaign use.</p><p><b>SOLUTION</b>Use AI for visual direction, then rebuild and refine the selected concept in Canva.</p><p><b>OUTCOME</b>Faster concept exploration while retaining control over layout, type, and branding.</p></div><dl><div><dt>ROLE</dt><dd>Prompt direction, hierarchy, typography, art direction, refinement</dd></div><div><dt>FINAL OUTPUT</dt><dd>Editable Canva campaign artwork refined from an AI-assisted concept.</dd></div></dl><div class="tags"><span>Generative AI</span><span>Canva</span><span>Art Direction</span></div></div>
+      </article>
+      </div>
+    </section>
+
+    <section class="profile" id="profile">
+      <div class="profile-portrait reveal"><div class="portrait-frame"><img src="assets/images/about-profile.webp" alt="Evan Foo" loading="lazy" decoding="async"></div></div>
+      <div class="profile-copy reveal"><p class="system-label"><i></i> PROFESSIONAL PROFILE</p><h2>Me, Evan</h2><p>Multidisciplinary product and digital marketing professional with experience across product positioning, graphic design, social content, short-form video, websites, sales materials, and internal tools.</p><p>I am most useful when a requirement is still unclear: I listen, organise the problem, explore a practical approach, build the first useful version, and refine it with feedback. AI-assisted tools help me move faster, but judgement and usability remain the focus.</p><div class="learning-grid"><div><small>BUILDING WITH</small><strong>Claude Code<br>Gemini · OpenAI</strong></div><div><small>WORKFLOW &amp; DATA</small><strong>API Integration<br>Google Cloud Console</strong></div><div><small>EXPLORING</small><strong>n8n Automation<br>AI Agents</strong></div></div><div class="tool-stack"><small>CREATIVE &amp; PRODUCTION TOOLKIT</small><span>Kling.ai</span><span>CapCut / Jianying</span><span>Canva</span><span>Shopify Liquid</span><span>GA4</span></div></div>
+    </section>
+
+    <section class="experience" id="experience">
+      <header class="section-head reveal"><div><p class="system-label"><i></i> EXPERIENCE LOG</p><h2>Cross-functional experience. <span>Hands-on execution.</span></h2></div></header>
+      <div class="experience-list">
+        <article class="experience-row experience-current reveal"><time>2024 — PRESENT</time><div><h3>Digital &amp; Product Marketing Executive</h3><p>Ty Innovations Pte Ltd</p></div><div class="experience-details"><ul><li>Support product positioning and sales enablement by organising product information, translating specifications into customer-facing materials, and improving how products are presented across digital channels.</li><li>Gather operational requirements and implement TyOS, an internal system for product information, purchase orders and incoming-stock visibility.</li><li>Plan and produce social content, short-form videos, product catalogues, landing pages, Shopify sections, presentations, and sales-support materials.</li><li><b>Workflow:</b> clarify the problem, map the users and information, develop an AI-assisted approach, implement the useful version, then test, validate and refine it before deployment.</li></ul></div></article>
+        <article class="experience-row reveal"><time>2018 — 2024</time><div><h3>Senior Graphic Designer</h3><p>Star Publishing Pte Ltd</p></div><div class="experience-details"><ul><li>Designed educational publications, book covers, illustrations, page layouts, and marketing materials.</li><li>Worked with editors and production teams to maintain visual quality, consistency, and publishing timelines.</li></ul></div></article>
+        <article class="experience-row reveal"><time>2017 — PRESENT</time><div><h3>Freelance Multimedia &amp; Digital Projects</h3><p>Project-Based</p></div><div class="experience-details"><ul><li>Translate SME requirements into landing pages, promotional videos, social assets, and practical digital solutions.</li><li>Manage projects from requirement discovery and content direction through production, feedback, and final delivery.</li></ul></div></article>
+        <article class="experience-row reveal"><time>2017</time><div><h3>Graphic Designer</h3><p>Tomato Advertising (M) Sdn. Bhd.</p></div><div class="experience-details"><ul><li>Created branding, campaign artwork, signage, and visual identity materials.</li><li>Translated client briefs into practical visual solutions for different business needs.</li></ul></div></article>
+      </div>
+    </section>
+  </main>
+
+  <footer><div><img src="assets/logo/evan-logo.png" alt=""><strong>EVAN FOO</strong></div><a href="#home">RETURN TO CORE ↑</a></footer>
+  <dialog class="image-viewer" data-image-viewer aria-label="Enlarged project preview"><button class="image-viewer-close" type="button" data-viewer-close aria-label="Close preview">×</button><figure><img data-viewer-image src="" alt=""><figcaption data-viewer-caption></figcaption></figure></dialog>
+  <dialog class="project-modal" data-project-modal aria-labelledby="project-modal-title">
+    <div class="project-modal-panel">
+      <button class="project-modal-close" type="button" data-project-modal-close aria-label="Close project details">×</button>
+      <div class="project-modal-content" data-project-modal-content></div>
+    </div>
+  </dialog>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

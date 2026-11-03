@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>TyOS — Sample Workflow Demo</title>
+  <style>
+    :root{--ink:#153746;--muted:#6c818b;--line:#dce8ed;--blue:#12759b;--blue-2:#e7f5fa;--green:#158665;--green-2:#e8f7f1;--amber:#a36a14;--amber-2:#fff5dd;--purple:#6750bd;--paper:#fff;--wash:#f4f9fb;--shadow:0 22px 55px #17465b1a}
+    *{box-sizing:border-box}html,body{height:100%;margin:0}body{overflow:hidden;background:var(--wash);color:var(--ink);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:13px}
+    button,input{font:inherit}.app{display:grid;grid-template-columns:190px 1fr;height:100%;min-height:650px}.side{display:flex;flex-direction:column;padding:22px 14px;border-right:1px solid var(--line);background:#fff}.logo{display:flex;align-items:center;justify-content:center;height:72px;margin-bottom:22px}.logo img{width:128px;height:auto}.nav-label{margin:8px 10px;color:#94a4ab;font-size:9px;font-weight:800;letter-spacing:.16em}.nav{display:flex;align-items:center;gap:10px;width:100%;min-height:44px;margin:3px 0;padding:0 12px;border:0;border-radius:11px;background:transparent;color:#66808a;text-align:left;font-weight:700;cursor:pointer;transition:.2s}.nav:hover{background:#f2f8fa;color:var(--blue)}.nav.active{background:var(--blue-2);color:#0d6f95;box-shadow:inset 3px 0 #1688af}.nav i{display:grid;place-items:center;width:23px;height:23px;border-radius:7px;background:#edf5f8;font-style:normal}.nav.active i{background:#fff}.side-note{margin-top:auto;padding:12px;border:1px solid var(--line);border-radius:12px;background:#f8fbfc;color:#78909a;font-size:10px;line-height:1.45}.side-note b{display:block;margin-bottom:4px;color:var(--blue);letter-spacing:.08em}.main{min-width:0;overflow:auto;padding:22px 28px 34px}.top{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:22px}.crumb{color:#7b919a;font-size:10px;font-weight:800;letter-spacing:.13em}.account{display:flex;align-items:center;gap:9px;color:#637b85;font-size:10px;font-weight:700}.avatar{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,#dff7ff,#e8e4ff);color:#4f5dba}.screen{display:none;animation:screen .35s ease}.screen.active{display:block}@keyframes screen{from{opacity:.2;transform:translateY(8px)}to{opacity:1;transform:none}}.heading{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:18px}.heading h1{margin:0 0 5px;font-size:clamp(25px,3vw,36px);letter-spacing:-.045em}.heading p{max-width:650px;margin:0;color:var(--muted);font-size:11px;line-height:1.55}.status{padding:7px 10px;border:1px solid #bfe8d8;border-radius:999px;background:var(--green-2);color:var(--green);font-size:9px;font-weight:850;letter-spacing:.08em}.toolbar{display:flex;gap:10px;margin-bottom:14px}.search{display:flex;align-items:center;gap:8px;min-height:42px;flex:1;padding:0 13px;border:1px solid var(--line);border-radius:11px;background:#fff;box-shadow:0 5px 16px #17465b0a;color:#86a0aa}.search input{width:100%;border:0;outline:0;color:var(--ink);background:transparent}.primary{min-height:42px;padding:0 16px;border:0;border-radius:11px;background:var(--blue);color:#fff;font-size:10px;font-weight:800;cursor:pointer;box-shadow:0 8px 20px #14789a32}.primary:hover{background:#0e6688}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px}.stat{padding:14px 15px;border:1px solid var(--line);border-radius:13px;background:#fff}.stat small{display:block;color:#80959e;font-size:8px;font-weight:800;letter-spacing:.09em}.stat strong{display:block;margin-top:5px;font-size:22px}.panel{overflow:hidden;border:1px solid var(--line);border-radius:15px;background:#fff;box-shadow:var(--shadow)}.table{width:100%;border-collapse:collapse}.table th{padding:12px 13px;border-bottom:1px solid var(--line);background:#f7fafb;color:#83969e;font-size:8px;letter-spacing:.08em;text-align:left}.table td{padding:14px 13px;border-bottom:1px solid #edf2f4;color:#536b75;font-size:10px}.table tr:last-child td{border-bottom:0}.table strong{color:var(--ink);font-size:11px}.pill{display:inline-block;padding:5px 8px;border-radius:999px;background:var(--amber-2);color:var(--amber);font-size:8px;font-weight:800}.pill.green{background:var(--green-2);color:var(--green)}.pill.blue{background:var(--blue-2);color:var(--blue)}.link{border:0;background:none;color:var(--blue);font-size:9px;font-weight:800;cursor:pointer}.drawer{display:none;grid-template-columns:1fr 1fr;gap:12px;padding:16px;border-top:1px solid var(--line);background:#f8fbfc}.drawer.open{display:grid;animation:screen .3s ease}.drawer section{padding:13px;border:1px solid var(--line);border-radius:11px;background:#fff}.drawer small{display:block;color:#8aa0a8;font-size:8px;font-weight:800;letter-spacing:.08em}.drawer strong{display:block;margin:5px 0;color:var(--ink)}.drawer p{margin:0;color:#6f858e;font-size:9px;line-height:1.5}.implemented{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;margin-top:14px;padding:12px 14px;border:1px solid #cce8dc;border-radius:12px;background:#f1faf6}.implemented b{font-size:10px}.implemented span{color:#648078;font-size:9px}.implemented em{color:var(--green);font-size:8px;font-style:normal;font-weight:850;letter-spacing:.1em}.request-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.request{padding:15px;border:1px solid var(--line);border-radius:14px;background:#fff;box-shadow:0 8px 20px #17465b0b}.request header{display:flex;justify-content:space-between;gap:10px}.request h3{margin:0;font-size:14px}.request p{margin:5px 0 12px;color:#758b94;font-size:9px}.progress{height:5px;overflow:hidden;border-radius:5px;background:#e6eef1}.progress i{display:block;width:62%;height:100%;background:linear-gradient(90deg,#2399bd,#62c9bd)}.request footer{display:flex;justify-content:space-between;margin-top:10px;color:#718892;font-size:9px}.request-lines{display:grid;gap:7px;margin-top:12px}.request-line{display:grid;grid-template-columns:1fr auto auto;gap:12px;padding-top:8px;border-top:1px solid #edf2f4;font-size:9px}.request-line b{color:var(--ink)}.planned{margin-top:14px;padding:12px 14px;border:1px dashed #cfc7ef;border-radius:12px;background:#f8f6ff;color:#6a5da1;font-size:9px;line-height:1.5}.planned b{display:block;margin-bottom:3px;font-size:8px;letter-spacing:.1em}.product-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.product{overflow:hidden;border:1px solid var(--line);border-radius:14px;background:#fff;box-shadow:0 8px 20px #17465b0c;cursor:pointer;transition:.2s}.product:hover,.product.active{border-color:#8fc8dc;transform:translateY(-2px);box-shadow:0 16px 34px #17465b1a}.product-image{display:grid;place-items:center;height:115px;background:linear-gradient(145deg,#f8fbfc,#edf5f8)}.product-image img{max-width:78%;max-height:88%;object-fit:contain}.product-copy{padding:12px}.product-copy small{color:var(--blue);font-size:8px;font-weight:850;letter-spacing:.08em}.product-copy h3{margin:5px 0 9px;font-size:12px}.product-meta{display:grid;grid-template-columns:1fr 1fr;gap:7px}.product-meta span{padding:7px;border-radius:8px;background:#f4f8fa;color:#738891;font-size:8px}.product-meta b{display:block;margin-top:2px;color:var(--ink);font-size:9px}.detail{display:none;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:12px;padding:13px;border:1px solid var(--line);border-radius:13px;background:#fff}.detail.open{display:grid}.detail div{padding:9px;border-radius:9px;background:#f5f9fa}.detail small{display:block;color:#8a9ea6;font-size:7px;font-weight:800}.detail b{display:block;margin-top:4px;font-size:9px}.cursor{position:fixed;z-index:20;top:55%;left:55%;width:22px;height:27px;opacity:0;pointer-events:none;transition:left .7s cubic-bezier(.2,.8,.2,1),top .7s cubic-bezier(.2,.8,.2,1),opacity .2s;filter:drop-shadow(0 2px 2px #0005)}.cursor.show{opacity:1}.cursor svg{width:100%}.pulse{position:fixed;z-index:19;width:28px;height:28px;border:2px solid #1684aa;border-radius:50%;opacity:0;pointer-events:none;transform:translate(-50%,-50%)}.pulse.go{animation:pulse .55s ease-out}@keyframes pulse{10%{opacity:.8;scale:.5}100%{opacity:0;scale:1.8}}.walkthrough{position:fixed;right:18px;bottom:16px;z-index:15;display:flex;align-items:center;gap:9px;padding:8px 9px 8px 12px;border:1px solid #d7e4e9;border-radius:999px;background:#ffffffed;box-shadow:0 14px 32px #163d4d24;backdrop-filter:blur(14px);color:#657e88;font-size:9px}.walkthrough button{width:29px;height:29px;border:0;border-radius:50%;background:var(--blue);color:#fff;cursor:pointer}.walkthrough strong{color:var(--ink)}
+    .demo-disclosure{margin:-10px 0 18px;padding:8px 11px;border-left:3px solid #8fc8dc;border-radius:0 8px 8px 0;background:#edf7fa;color:#657f89;font-size:9px;line-height:1.45}
+    @media(max-width:760px){body{overflow:auto}.app{display:block;min-height:100%}.side{position:sticky;z-index:10;top:0;display:grid;grid-template-columns:repeat(3,1fr);padding:8px;border-right:0;border-bottom:1px solid var(--line)}.logo,.nav-label,.side-note{display:none}.nav{justify-content:center;padding:0 5px}.nav i{display:none}.main{padding:18px 12px 80px}.top{display:none}.demo-disclosure{margin:0 0 16px}.heading{display:block}.status{display:inline-block;margin-top:10px}.stats,.product-grid{grid-template-columns:1fr}.request-grid{grid-template-columns:1fr}.table{min-width:720px}.panel{overflow:auto}.drawer,.detail{grid-template-columns:1fr 1fr}.cursor,.pulse{display:none}.walkthrough{left:12px;right:12px;justify-content:space-between}.product{display:grid;grid-template-columns:120px 1fr}.product-image{height:100%}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}.cursor,.pulse{display:none}}
+  </style>
+</head>
+<body>
+  <div class="app">
+    <aside class="side">
+      <div class="logo"><img src="ty-os-logo.png" alt="TY OS+"></div>
+      <div class="nav-label">OPERATIONS</div>
+      <button class="nav active" data-screen="po"><i>▤</i>Purchase Orders</button>
+      <button class="nav" data-screen="incoming"><i>▧</i>Incoming Stock</button>
+      <button class="nav" data-screen="products"><i>⌕</i>Product Library</button>
+      <div class="side-note"><b>DEMO MODE</b>Interface based on the working TyOS system. All records and values shown here are fictional.</div>
+    </aside>
+    <main class="main">
+      <div class="top"><span class="crumb">TY OS+ / OPERATIONS WORKSPACE</span><div class="account"><span>Demo presentation</span><i class="avatar">EF</i></div></div>
+      <p class="demo-disclosure">A simplified interactive walkthrough based on the actual TyOS system. Sample data is used for demonstration.</p>
+
+      <section class="screen active" data-view="po">
+        <header class="heading"><div><h1>Purchase Order Management</h1><p>Create, validate and review purchase orders in one shared workflow instead of piecing records together from separate conversations.</p></div><span class="status">IMPLEMENTED</span></header>
+        <div class="toolbar"><label class="search">⌕ <input id="poSearch" placeholder="Search PO, PR, SKU or product name…"></label><button class="primary" id="newPo">＋ New purchase order</button></div>
+        <div class="stats"><div class="stat"><small>OPEN PURCHASE ORDERS</small><strong>3</strong></div><div class="stat"><small>PRODUCT LINES</small><strong>8</strong></div><div class="stat"><small>AWAITING DATES</small><strong>1</strong></div></div>
+        <div class="panel" id="poPanel"><table class="table"><thead><tr><th>PO</th><th>SUPPLIER</th><th>PRODUCT LINES</th><th>ETD / ETA</th><th>STATUS</th><th></th></tr></thead><tbody>
+          <tr><td><strong>DEMO-PO-2408</strong><br>31 Oct 2026</td><td>Sample Supplier A</td><td>3 lines · 12 units</td><td>04 Nov / 18 Nov</td><td><span class="pill blue">In Transit</span></td><td><button class="link" data-po-detail>View details →</button></td></tr>
+          <tr><td><strong>DEMO-PO-2411</strong><br>01 Nov 2026</td><td>Sample Supplier B</td><td>2 lines · 6 units</td><td>TBC / TBC</td><td><span class="pill">Ordered</span></td><td><button class="link" data-po-detail>View details →</button></td></tr>
+          <tr><td><strong>DEMO-PO-2397</strong><br>25 Oct 2026</td><td>Sample Supplier C</td><td>3 lines · 9 units</td><td>28 Oct / 08 Nov</td><td><span class="pill green">Arrived</span></td><td><button class="link" data-po-detail>View details →</button></td></tr>
+        </tbody></table><div class="drawer" id="poDrawer"><section><small>PO RECORD</small><strong>DEMO-PO-2408 · Version 3</strong><p>Supplier, origin, status, dates and three product lines are stored in one central record.</p></section><section><small>VALIDATION &amp; HISTORY</small><strong>Required fields checked</strong><p>Edits use version checks to avoid silent overwrites. Authorised users can review the record history.</p></section></div></div>
+        <div class="implemented"><div><b>Working solution</b><br><span>Local document preparation can identify PO references, SKU candidates and quantities before a user reviews and publishes the record.</span></div><em>HUMAN REVIEW REQUIRED</em></div>
+      </section>
+
+      <section class="screen" data-view="incoming">
+        <header class="heading"><div><h1>Incoming Shipment Tracking</h1><p>Review product lines, quantities, ETD, ETA, owner and shipment status from the same PO records.</p></div><span class="status">IMPLEMENTED</span></header>
+        <div class="toolbar"><label class="search">⌕ <input placeholder="Search PO, PR, SKU, owner or product name…"></label></div>
+        <div class="request-grid">
+          <article class="request"><header><div><h3>DEMO-PR-014</h3><p>PO DEMO-PO-2408 · 2 product lines</p></div><span class="pill blue">In Transit</span></header><div class="progress"><i></i></div><footer><span>04 Nov ETD</span><span>18 Nov ETA</span></footer><div class="request-lines"><div class="request-line"><b>DEMO-CH-02</b><span>8 units</span><span>In Transit</span></div><div class="request-line"><b>DEMO-FZ-04</b><span>4 units</span><span>In Transit</span></div></div></article>
+          <article class="request"><header><div><h3>Regular restock</h3><p>PO DEMO-PO-2411 · 2 product lines</p></div><span class="pill">Ordered</span></header><div class="progress"><i style="width:0"></i></div><footer><span>ETD TBC</span><span>ETA TBC</span></footer><div class="request-lines"><div class="request-line"><b>DEMO-OV-06</b><span>2 units</span><span>Ordered</span></div><div class="request-line"><b>DEMO-DW-01</b><span>4 units</span><span>Ordered</span></div></div></article>
+        </div>
+        <div class="implemented"><div><b>Operational visibility now</b><br><span>Line-level quantity, status, ETD, ETA, sales owner and remarks are visible in card or list views, with completed arrivals separated into history.</span></div><em>LIVE WORKFLOW</em></div>
+        <div class="planned"><b>PLANNED NEXT ITERATION — NOT YET IMPLEMENTED</b>Dedicated shipped and outstanding quantity fields for each SKU, with separate partial-shipment records. The current system records partial-shipment context in line remarks and status.</div>
+      </section>
+
+      <section class="screen" data-view="products">
+        <header class="heading"><div><h1>Product Library &amp; Search</h1><p>Find specifications, pricing, availability and product documents without repeating the same lookup across different files.</p></div><span class="status">IMPLEMENTED</span></header>
+        <div class="toolbar"><label class="search">⌕ <input id="productSearch" placeholder="Search SKU, product name, brand or category…"></label></div>
+        <div class="product-grid" id="productGrid">
+          <article class="product" data-name="upright freezer cooling demo-fz-04"><div class="product-image"><img src="images/sample-freezer.png" alt="Sample freezer product"></div><div class="product-copy"><small>DEMO-FZ-04</small><h3>Upright Freezer</h3><div class="product-meta"><span>AVAILABLE<b>Sample stock</b></span><span>DOCUMENT<b>Product PDF</b></span><span>PRICE<b>Demo value</b></span><span>CATEGORY<b>Cooling</b></span></div></div></article>
+          <article class="product" data-name="convection oven cooking demo-ov-06"><div class="product-image"><img src="images/sample-oven.png" alt="Sample oven product"></div><div class="product-copy"><small>DEMO-OV-06</small><h3>Convection Oven</h3><div class="product-meta"><span>AVAILABLE<b>Sample stock</b></span><span>DOCUMENT<b>Product PDF</b></span><span>PRICE<b>Demo value</b></span><span>CATEGORY<b>Cooking</b></span></div></div></article>
+          <article class="product" data-name="dishwasher warewashing demo-dw-01"><div class="product-image"><img src="images/sample-dishwasher.png" alt="Sample dishwasher product"></div><div class="product-copy"><small>DEMO-DW-01</small><h3>Dishwasher</h3><div class="product-meta"><span>AVAILABLE<b>Sample stock</b></span><span>DOCUMENT<b>Product PDF</b></span><span>PRICE<b>Demo value</b></span><span>CATEGORY<b>Warewashing</b></span></div></div></article>
+        </div>
+        <div class="detail" id="productDetail"><div><small>DIMENSIONS</small><b>Sample specification</b></div><div><small>POWER</small><b>Sample specification</b></div><div><small>AVAILABILITY</small><b>Sample quantity</b></div><div><small>DOCUMENT</small><b>Product PDF linked</b></div></div>
+        <div class="implemented"><div><b>Working solution</b><br><span>D1-backed product records and R2-hosted images/documents support search, controlled editing and one consistent information source.</span></div><em>CENTRALISED LIBRARY</em></div>
+      </section>
+    </main>
+  </div>
+  <div class="cursor" aria-hidden="true"><svg viewBox="0 0 24 30"><path d="M3 2.4c0-1 1.1-1.5 1.9-.8L21.2 16c.9.8.5 2.3-.7 2.5l-6.2 1.1 3.7 6.2-3.3 2-3.8-6.3-3.5 5.1c-.7 1-2.2.6-2.4-.6L3 2.4Z" fill="#111317" stroke="#fff" stroke-width="1.7" stroke-linejoin="round"/></svg></div><div class="pulse" aria-hidden="true"></div>
+  <div class="walkthrough"><span><strong>See it work</strong> · <i id="walkText">Purchase order workflow</i></span><button id="play" aria-label="Play walkthrough">▶</button></div>
+  <script>
+    const navs=[...document.querySelectorAll('.nav')],screens=[...document.querySelectorAll('.screen')],cursor=document.querySelector('.cursor'),pulse=document.querySelector('.pulse'),walkText=document.querySelector('#walkText');
+    function show(name){navs.forEach(n=>n.classList.toggle('active',n.dataset.screen===name));screens.forEach(s=>s.classList.toggle('active',s.dataset.view===name))}
+    navs.forEach(n=>n.onclick=()=>show(n.dataset.screen));
+    document.querySelectorAll('[data-po-detail]').forEach(b=>b.onclick=()=>document.querySelector('#poDrawer').classList.toggle('open'));
+    document.querySelectorAll('.product').forEach(p=>p.onclick=()=>{document.querySelectorAll('.product').forEach(x=>x.classList.remove('active'));p.classList.add('active');document.querySelector('#productDetail').classList.add('open')});
+    document.querySelector('#productSearch').oninput=e=>document.querySelectorAll('.product').forEach(p=>p.hidden=!p.dataset.name.includes(e.target.value.toLowerCase()));
+    const wait=ms=>new Promise(r=>setTimeout(r,ms)),reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+    async function point(el,text){if(!el)return;const r=el.getBoundingClientRect();cursor.classList.add('show');cursor.style.left=(r.left+r.width*.62)+'px';cursor.style.top=(r.top+r.height*.55)+'px';walkText.textContent=text;await wait(800);pulse.style.left=(r.left+r.width*.62)+'px';pulse.style.top=(r.top+r.height*.55)+'px';pulse.classList.remove('go');void pulse.offsetWidth;pulse.classList.add('go');el.click();await wait(950)}
+    let running=false,loopTimer=0;
+    function resetTour(){
+      document.querySelector('#poDrawer').classList.remove('open');
+      document.querySelector('#productDetail').classList.remove('open');
+      document.querySelectorAll('.product').forEach(p=>p.classList.remove('active'));
+      const input=document.querySelector('#productSearch');
+      input.value='';
+      input.dispatchEvent(new Event('input'));
+    }
+    function scheduleTour(delay=1800){
+      clearTimeout(loopTimer);
+      if(!reduced)loopTimer=setTimeout(tour,delay);
+    }
+    async function tour(){
+      if(running||reduced)return;
+      clearTimeout(loopTimer);
+      running=true;
+      resetTour();
+      show('po');
+      await wait(500);
+      await point(document.querySelector('[data-po-detail]'),'Review central PO record');
+      show('incoming');
+      await wait(650);
+      await point(document.querySelector('[data-screen="incoming"]'),'Track incoming product lines');
+      show('products');
+      await wait(650);
+      const input=document.querySelector('#productSearch');
+      await point(input,'Find product information');
+      input.value='freezer';
+      input.dispatchEvent(new Event('input'));
+      await wait(500);
+      await point(document.querySelector('.product:not([hidden])'),'Open specifications and documents');
+      await wait(1100);
+      cursor.classList.remove('show');
+      walkText.textContent='Walkthrough complete · replaying shortly';
+      running=false;
+      scheduleTour();
+    }
+    document.querySelector('#play').onclick=()=>{clearTimeout(loopTimer);tour()};
+    scheduleTour(1200);
+  </script>
+</body>
+</html>
