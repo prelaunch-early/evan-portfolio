@@ -525,6 +525,53 @@ body:has(.project-modal[open]){overflow:hidden}
   footer{padding:32px 18px}
 }
 
+/* Mobile hero: compact, intentional bento layout without the empty spacer. */
+@media(max-width:650px){
+  .hero{
+    display:grid;
+    grid-template-columns:1fr;
+    align-content:start;
+    min-height:0;
+    padding:98px 16px 52px;
+  }
+  .portfolio-modules{
+    position:relative;
+    inset:auto;
+    right:auto;
+    bottom:auto;
+    justify-self:stretch;
+    width:100%;
+    height:auto;
+    min-height:286px;
+    margin-top:38px;
+    padding:18px 0;
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    align-content:center;
+    gap:10px;
+    overflow:visible;
+  }
+  .portfolio-modules a,
+  .portfolio-modules a:nth-of-type(4),
+  .portfolio-modules a:nth-of-type(5){
+    grid-column:auto;
+    width:auto;
+    min-height:78px;
+    justify-self:stretch;
+    padding:11px 12px;
+  }
+  .portfolio-modules a:nth-of-type(5){
+    grid-column:1/-1;
+  }
+  .category-particle-ball{
+    left:50%;
+    top:50%;
+    width:150vw;
+    height:150vw;
+    opacity:.48;
+  }
+}
+
 @media(max-width:360px){
   .hero h1{font-size:1.95rem}
   .hero-actions{grid-template-columns:1fr}
