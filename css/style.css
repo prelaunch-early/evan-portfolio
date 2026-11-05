@@ -280,6 +280,7 @@ footer{border-top:1px solid #d2d2d7;background:#f5f5f7;color:#6e6e73}footer div{
 .project-grid .project-copy{order:3;padding:0 8px 14px;transform:none!important}
 .project-grid .card-category{display:block;margin:17px 0 4px;color:#0071e3;text-align:center;font-size:.56rem;font-weight:800;letter-spacing:.1em}
 .project-grid .project-copy .project-no,.project-grid .project-copy .case-summary,.project-grid .project-copy>p,.project-grid .project-copy dl,.project-grid .project-copy .tags{display:none}
+.project-grid .project-copy .project-links{display:none}
 .project-grid .project-copy h3{margin:8px 0 0;text-align:center;font-size:clamp(1.38rem,1.8vw,1.9rem);line-height:1.08;letter-spacing:-.035em}
 .project-grid #web-project,.project-grid #reels-project,.project-grid #web-project:hover,.project-grid #reels-project:hover,.project-grid #web-project:focus-visible,.project-grid #reels-project:focus-visible{box-shadow:none}
 .project-grid #web-project .project-screen,.project-grid #reels-project .project-screen,.project-grid #web-project .project-screen figure,.project-grid #reels-project .reel-player{box-shadow:none}
@@ -308,6 +309,9 @@ footer{border-top:1px solid #d2d2d7;background:#f5f5f7;color:#6e6e73}footer div{
 .project-modal-content .case-summary b{color:#0071e3;font-size:.58rem;letter-spacing:.09em}
 .project-modal-content dl{margin-top:24px}.project-modal-content dt{font-size:.58rem}.project-modal-content dd{font-size:.78rem;line-height:1.55}.project-modal-content .tags span{font-size:.58rem}
 .project-modal-content .tags{margin-top:20px}
+.project-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.project-links a{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:11px 17px;border:1px solid #0071e3;border-radius:999px;background:#0071e3;color:#fff;font-size:.62rem;font-weight:800;letter-spacing:.055em;text-transform:uppercase;transition:transform .2s ease,background .2s ease}
+.project-links a:hover,.project-links a:focus-visible{background:#0077ed;transform:translateY(-2px);outline:3px solid #0071e333;outline-offset:3px}
 .project-modal-content .reel-system{display:grid;grid-template-columns:1fr 110px}
 .project-modal-content>.reel-system{aspect-ratio:auto;min-height:620px}
 .project-modal-content .poster-screen{grid-template-columns:.72fr .28fr}
@@ -439,7 +443,7 @@ body:has(.project-modal[open]){overflow:hidden}
   .identity{gap:9px;font-size:.7rem}
   .identity img{width:36px;height:36px}
 
-  .hero{min-height:860px;padding:98px 16px 150px;align-items:start}
+  .hero{min-height:940px;padding:98px 16px 330px;align-items:start}
   .hero-copy{width:calc(100vw - 32px);max-width:calc(100vw - 32px)}
   .system-label{align-items:flex-start;font-size:.5rem;line-height:1.5;letter-spacing:.05em}
   .system-label i{flex:0 0 7px;margin-top:.25em}
@@ -448,13 +452,14 @@ body:has(.project-modal[open]){overflow:hidden}
   .hero-actions{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.85fr);width:100%;gap:9px}
   .hero-actions a{display:flex;align-items:center;justify-content:center;min-width:0;padding:11px 10px;text-align:center}
   .hero-actions b{margin-left:8px}
-  .portfolio-modules{right:12px;bottom:38px;width:calc(100% - 24px);display:flex;gap:8px;padding:8px 0 9px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x proximity;scrollbar-width:none;-webkit-overflow-scrolling:touch}
-  .portfolio-modules::-webkit-scrollbar{display:none}
-  .portfolio-modules a{flex:0 0 112px;min-height:80px;padding:12px 10px;scroll-snap-align:start;border-radius:14px;background:#ffffffd9}
+  .portfolio-modules{right:12px;bottom:76px;width:calc(100% - 24px);height:270px;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));align-content:center;gap:8px;padding:12px 0;overflow:visible}
+  .portfolio-modules a{grid-column:span 2;min-height:76px;padding:11px 9px;border-radius:14px;background:#ffffffdc}
+  .portfolio-modules a:nth-of-type(4){grid-column:2/span 2}
+  .portfolio-modules a:nth-of-type(5){grid-column:4/span 2;width:auto;justify-self:stretch}
   .portfolio-modules small{left:10px;top:8px;font-size:.45rem}
   .portfolio-modules strong{font-size:.7rem}
   .portfolio-modules span{display:block;font-size:.48rem;line-height:1.25}
-  .category-particle-ball{left:65%;top:46%;width:155vw;height:155vw;opacity:.34}
+  .category-particle-ball{left:50%;top:48%;width:155vw;height:155vw;opacity:.58;filter:saturate(1.2) contrast(1.04)}
   .hero-coordinates,.hero-index{display:none}
 
   .signal-band>div{padding:20px 18px}
